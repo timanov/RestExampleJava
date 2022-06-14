@@ -4,6 +4,7 @@ git config --global
 git clone https://timanov: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@github.com/timanov/RestExampleJava
 sudo apt -y install openjdk-8-jdk
 cd RestExampleJava
+apt install maven -y
 mvn clean
 
 
