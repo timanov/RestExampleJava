@@ -7,3 +7,5 @@ apt install openjdk-8-jdk -y
 apt install maven -y
 cd RestExampleJava
 mvn package
+sh script_sh/install_docker.sh
+sh script_sh/run_docker_app.sh
