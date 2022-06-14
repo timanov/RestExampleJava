@@ -6,6 +6,4 @@ apt-get update
 apt install openjdk-8-jdk -y
 apt install maven -y
 cd RestExampleJava
-mvn spring-boot:run
-
-
+mvn package
