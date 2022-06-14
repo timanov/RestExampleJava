@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Service
+@Service //Гооврит, что является сервисом, в котором реализуется бизнес-логика
 public class ClientServiceImpl implements ClientService {
 
     // Хранилище килиентов
@@ -34,6 +34,24 @@ public class ClientServiceImpl implements ClientService {
     public Client read(int id){
         return CLIENT_REPOSITORY_MAP.get(id);
     }
+
+    @Override
+    public boolean update(Client client, int id){
+        if (CLIENT_REPOSITORY_MAP.containsKey(id)) {
+            client.setId(id);
+            CLIENT_REPOSITORY_MAP.put(id, client);
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        return CLIENT_REPOSITORY_MAP.remove(id) != null;
+    }
+
+
 
 
 

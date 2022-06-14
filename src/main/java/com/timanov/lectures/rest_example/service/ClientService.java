@@ -19,6 +19,13 @@ public interface ClientService {
     List<Client> readAll();
 
     /**
+     * Возвращает клиента по его ID
+     * @param id - ID клиента
+     * @return - объект клиента с заданным ID
+     */
+    Client read(int id);
+
+    /**
      * Обновляет клиента с заданным ID,
      * в соответствии с переданным клиентом
      * @param client - клиент в соответствии с которым нужно обновить данные
