@@ -2,6 +2,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Сборка проекта
+RUN apt isntall maven
 RUN mvn package
 
 # Refer to Maven build -> finalName
