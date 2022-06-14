@@ -1,6 +1,7 @@
-package com.timanov.lectures.rest_example.service;
+package com.timanov.lectures.rest_example.controller;
 
 import com.timanov.lectures.rest_example.model.Client;
+import com.timanov.lectures.rest_example.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class ClientController {
     }
 
     @GetMapping(value = "/clients")
-    public ResponseEntity<List<Client>> read(@PathVariable(name = "id") int id) {
+    public ResponseEntity<List<Client>> read() {
         final List<Client> clients = clientService.readAll();
 
         return clients != null && !clients.isEmpty()
@@ -45,7 +46,7 @@ public class ClientController {
     @DeleteMapping(value = "/clients/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") int id) {
         final boolean deleted = clientService.delete(id);
-        
+
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
