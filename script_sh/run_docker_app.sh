@@ -1,4 +1,4 @@
 cd rest_example
 
-docker build -t rest_example .
-docker run --name rest_example -p 80:8080 -d rest_example
+sudo docker build -t spring-boot:1.0 .
+sudo docker run -d -p 8080:8080 -t spring-boot:1.0

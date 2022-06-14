@@ -1,4 +1,12 @@
-FROM openjdk:8-jdk-alpine
+# For Java 11
+FROM adoptopenjdk/openjdk11:alpine-jre
 
-COPY target/docker-rest_example-0.0.1-SNAPSHOT.jar rest_example-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "/rest_example-0.0.1-SNAPSHOT.jar"]
+# Refer to Maven build -> finalName
+ARG JAR_FILE=target/rest_example-0.0.1-SNAPSHOT.jar
+
+# cd /opt/app
+WORKDIR /opt/app
+
+COPY ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
