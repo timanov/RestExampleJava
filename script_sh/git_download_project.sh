@@ -5,6 +5,6 @@ git clone https://timanov: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@github.com/ti
 sudo apt -y install openjdk-8-jdk
 cd RestExampleJava
 apt install maven -y
-mvn clean
+mvn spring-boot:run
 
 
