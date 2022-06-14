@@ -1,0 +1,21 @@
+Получение пользователя (GET):
+URL: localhost:8080/clients
+
+Создание пользователя (POST):
+URL: localhost:8080/clients
+{
+	"name": "Mikhail Timanov",
+	"email": "mihailtimanov@gmail.com",
+	"phone": "89999694060"
+}
+
+Обновление пользователя (PUT):
+URL: localhost:8080/clients/{id}
+{
+	"name": "Mikhail1 Timanov",
+	"email": "mihailtimanov@gmail.com",
+	"phone": "89999694060"
+}
+
+Удаление пользователя (DELETE):
+URL: localhost:8080/clients/{id}
